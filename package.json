@@ -1,0 +1,20 @@
+{
+  "name": "playtone",
+  "version": "1.0.0",
+  "description": "Music learning tool.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jedd Ahyoung",
+  "license": "ISC",
+  "dependencies": {
+    "lit-html": "^1.2.1",
+    "vexflow": "^1.2.90"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.4",
+    "typescript": "^3.8.3"
+  }
+}
