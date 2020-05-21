@@ -12,4 +12,13 @@ DONE - Sound only/note only
 	- Tuning
 	- Number of strings
 	- Number of frets per string
-	- Tuning interval per fret...?
+	DEFER - Tuning interval per fret...?
+- Practice note configuration
+	- All notes
+	- Choose notes
+	- Notes by key
+- Add a timer...
+- Make a game mode perhaps?
+	- Number of recognitions?
+	- "Metronome" mode - timed play?
+	- Recording progress?

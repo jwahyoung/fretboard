@@ -1,0 +1,26 @@
+.fretboard-note {
+	width: 80px;
+	max-width: 80px;
+}
+
+table.fretboard thead th {
+	border-bottom: 2px solid black;
+}
+
+table.fretboard tfoot th {
+	border-top: 3px solid black;
+}
+
+table.fretboard tbody tr {
+	background: transparent url(data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=) repeat-x 0 52%;
+}
+
+table.fretboard tbody th {
+	background: transparent url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNs+A8AAgUBgQvw1B0AAAAASUVORK5CYII=) repeat-y 0 0;
+	background-size: 50% 1px;
+}
+
+table.fretboard .tag {
+	height: 2.5em;
+	border: 1px solid black;
+}
