@@ -1,4 +1,4 @@
-import { generateLookup } from "./constants";
+import { generateLookup, pitchClass } from "./constants";
 
 // TODO: Generate this from a configuration function for later use.
 export const config = {
@@ -20,6 +20,7 @@ export const config = {
 	],
 	sharps: true,
 	flats: true,
+	activeNotes: pitchClass.slice()
 };
 
 /**
@@ -46,3 +47,7 @@ export const createStringRanges = () => {
 			};
 		});
 };
+
+export const getActiveNotes = () => {
+	return config.activeNotes;
+}

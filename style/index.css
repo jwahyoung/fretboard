@@ -3,6 +3,15 @@
 	max-width: 80px;
 }
 
+.fretboard-note .tag {
+	transition: opacity .5s ease-in-out;
+	opacity: 30%;
+}
+
+.fretboard-note .tag.active {
+	opacity: 100%;
+}
+
 table.fretboard thead th {
 	border-bottom: 2px solid black;
 }
@@ -24,3 +33,193 @@ table.fretboard .tag {
 	height: 2.5em;
 	border: 1px solid black;
 }
+
+ol.is-unstyled {
+	list-style-type: none;
+	counter-reset: li;
+	counter-increment: initial;
+}
+
+ol.is-unstyled li::before {
+	content: counter(li);
+	counter-increment: li -1;
+	position: absolute;
+	overflow: hidden;
+    left: 0;
+	top: 0;
+	bottom: 0;
+    margin-top: 0;
+	line-height: 10rem;
+	font-size: 19em;
+	color: #eee;
+	margin-left: 0;
+}
+
+.string-config {
+	margin-bottom: 2rem;
+	padding-left: 8rem;
+}
+
+
+
+
+.button.button-whitekey {
+	background: white;
+	color: black;
+	border: none;
+}
+
+.button.button-whitekey:not([disabled]):hover, .button.button-whitekey:not([disabled]):focus {
+	box-shadow: 0 0 0 2px black;
+	outline-width: 2px;
+}
+
+.button.button-whitekey:active {
+	background: black;
+	color: white;
+}
+
+.button.button-blackkey {
+	background: black;
+	color: white;
+	text-transform: none;
+	border: 8px solid white;
+}
+
+.button.button-blackkey:not([disabled]):hover, .button.button-blackkey:not([disabled]):focus {
+	box-shadow: 0 0 0 2px black;
+	outline-width: 2px;
+}
+
+.button.button-blackkey:active {
+	background: black;
+	color: white;
+}
+
+.chromaticcircle {
+	height: 570px;
+	width: 570px;
+	margin: 1em auto 1em auto;
+	border-radius: 1000px;
+	background: #ddd;
+	position: relative;
+}
+  
+.chromaticcircle .button {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-left: -40px;
+	margin-top: -40px;
+	border-radius: 100px;
+	height: 80px;
+	width: 80px;
+	font-weight: bold;
+}
+
+.chromaticcircle .button:disabled {
+	opacity: 20%;
+}
+  
+.chromaticcircle .button > span {
+	display: inline-block;
+}
+
+.chromaticcircle .button.check-answer {
+	height: 200px;
+	width: 200px;
+	margin-left: -100px;
+	margin-top: -100px;
+}
+
+.b1 { 
+	transform: translateY(-220px);
+  }
+  
+  .b2 { 
+	transform: rotate(30deg) translateY(-220px);
+  }
+  
+  .b2 > span {
+	transform: rotate(-30deg);
+  }
+  
+  .b3 { 
+	transform: rotate(60deg) translateY(-220px);
+  }
+  
+  .b3 > span {
+	transform: rotate(-60deg);
+  }
+  
+  .b4 { 
+	transform: rotate(90deg) translateY(-220px);
+  }
+  
+  .b4 > span {
+	transform: rotate(-90deg);
+  }
+  
+  .b5 { 
+	transform: rotate(120deg) translateY(-220px);
+  }
+  
+  .b5 > span {
+	transform: rotate(-120deg);
+  }
+  
+  .b6 { 
+	transform: rotate(150deg) translateY(-220px);
+  }
+  
+  .b6 > span {
+	transform: rotate(-150deg);
+  }
+  
+  .b7 { 
+	transform: rotate(180deg) translateY(-220px);
+  }
+  
+  .b7 > span {
+	transform: rotate(-180deg);
+  }
+  
+  .b8 { 
+	transform: rotate(210deg) translateY(-220px);
+  }
+  
+  .b8 > span {
+	transform: rotate(-210deg);
+  }
+  
+  .b9 { 
+	transform: rotate(240deg) translateY(-220px);
+  }
+  
+  .b9 > span {
+	transform: rotate(-240deg);
+  }
+  
+  .b10 { 
+	transform: rotate(270deg) translateY(-220px);
+  }
+  
+  .b10 > span {
+	transform: rotate(-270deg);
+  }
+  
+  .b11 { 
+	transform: rotate(300deg) translateY(-220px);
+  }
+  
+  .b11 > span {
+	transform: rotate(-300deg);
+  }
+  
+  .b12 { 
+	transform: rotate(330deg) translateY(-220px);
+  }
+  
+  .b12 > span {
+	transform: rotate(-330deg);
+  }

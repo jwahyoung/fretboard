@@ -2,8 +2,8 @@ import { config, lookup } from "../config";
 import { TemplateResult, render } from "lit-html";
 import { View } from "../types";
 
-export class ConfigViewModel {
-	_viewTemplate: View<ConfigViewModel>;
+export class NoteViewModel {
+	_viewTemplate: View<NoteViewModel>;
 	_targetSelector: () => HTMLElement;
 
 	constructor({ viewTemplate, targetSelector }) {

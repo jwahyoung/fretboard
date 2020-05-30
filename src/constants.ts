@@ -5,7 +5,10 @@ export function getEqualTemperedNote(number) {
 	return A4 * Math.pow(twelfthRoot, number);
 };
 
+export type Pitch = 'A' | 'A#,Bb' | 'B' | 'C' | 'C#,Db' | 'D' | 'D#,Eb' | 'E' | 'F' | 'F#,Gb' | 'G' | 'G#,Ab';
+
 export const pitchClass = ['A', 'A#,Bb', 'B', 'C', 'C#,Db', 'D', 'D#,Eb', 'E', 'F', 'F#,Gb', 'G', 'G#,Ab'];
+export const octaveNotes: string[] = ['C', 'C#,Db', 'D', 'D#,Eb', 'E', 'F', 'F#,Gb', 'G', 'G#,Ab', 'A', 'A#,Bb', 'B'];
 
 /**
  * For a given class of pitches, generate a range of notes in the specified octave range.
