@@ -18,7 +18,7 @@ export const fretboard = (strings, activeNotes = pitchClass, hideAllNotes = fals
 	return html`
 		<div id="notation">
 			<div class="table-container">
-				<table class="table fretboard is-fullwidth is-hoverable is-narrow">
+				<table dir="ltr" class="table fretboard is-fullwidth is-hoverable is-narrow">
 					<thead>
 						<tr>
 							${Array(numberOfFrets + 1).fill('').map((x, index) => html`

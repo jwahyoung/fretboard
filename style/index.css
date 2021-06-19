@@ -33,6 +33,10 @@ table.fretboard tbody th {
 	background-size: 50% 1px;
 }
 
+table[dir='rtl'].fretboard tbody th {
+	background-position-x: 100%;
+}
+
 table.fretboard .tag {
 	height: 2.5em;
 	border: 1px solid black;
