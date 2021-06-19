@@ -1,23 +1,55 @@
 import { generateLookup, pitchClass } from "./constants";
 
-// TODO: Generate this from a configuration function for later use.
-export const config = {
-	strings:  [
+// TODO: Move.
+export const instruments = {
+	bass_EADG: [
+		{ note: 'E', offset: 0, octave: 1, frets: 24 },
+		{ note: 'A', offset: 0, octave: 1, frets: 24 },
+		{ note: 'D', offset: 0, octave: 2, frets: 24 },
+		{ note: 'G', offset: 0, octave: 2, frets: 24 },
+	],
+	bass_BEADG: [
+		{ note: 'B', offset: 0, octave: 0, frets: 24 },
+		{ note: 'E', offset: 0, octave: 1, frets: 24 },
+		{ note: 'A', offset: 0, octave: 1, frets: 24 },
+		{ note: 'D', offset: 0, octave: 2, frets: 24 },
+		{ note: 'G', offset: 0, octave: 2, frets: 24 },
+	],
+	bass_BEADGC: [
 		{ note: 'B', offset: 0, octave: 0, frets: 24 },
 		{ note: 'E', offset: 0, octave: 1, frets: 24 },
 		{ note: 'A', offset: 0, octave: 1, frets: 24 },
 		{ note: 'D', offset: 0, octave: 2, frets: 24 },
 		{ note: 'G', offset: 0, octave: 2, frets: 24 },
 		{ note: 'C', offset: 0, octave: 3, frets: 24 },
-/*
-		{ note: 'F', offset: 0, octave: 3, frets: 24 },
-		{ note: 'A#,Bb', offset: 0, octave: 0, frets: 24 },
-		{ note: 'D#,Eb', offset: 0, octave: 1, frets: 24 },
-		{ note: 'G#,Ab', offset: 0, octave: 1, frets: 24 },
-		{ note: 'C#,Db', offset: 0, octave: 2, frets: 24 },
-		{ note: 'F#,Gb', offset: 0, octave: 2, frets: 24 },
-		*/
 	],
+	cello_CDGA: [
+		{ note: 'C', offset: 0, octave: 2, frets: 24 },
+		{ note: 'G', offset: 0, octave: 2, frets: 24 },
+		{ note: 'D', offset: 0, octave: 3, frets: 24 },
+		{ note: 'A', offset: 0, octave: 3, frets: 24 },
+	],
+	guitar_EADGBE: [
+		{ note: 'E', offset: 0, octave: 2, frets: 24 },
+		{ note: 'A', offset: 0, octave: 2, frets: 24 },
+		{ note: 'D', offset: 0, octave: 3, frets: 24 },
+		{ note: 'G', offset: 0, octave: 3, frets: 24 },
+		{ note: 'B', offset: 0, octave: 3, frets: 24 },
+		{ note: 'E', offset: 0, octave: 4, frets: 24 },
+	],
+	guitar_DADGAD: [
+		{ note: 'D', offset: 0, octave: 2, frets: 24 },
+		{ note: 'A', offset: 0, octave: 2, frets: 24 },
+		{ note: 'D', offset: 0, octave: 3, frets: 24 },
+		{ note: 'G', offset: 0, octave: 3, frets: 24 },
+		{ note: 'A', offset: 0, octave: 3, frets: 24 },
+		{ note: 'D', offset: 0, octave: 4, frets: 24 },
+	]
+};
+
+// TODO: Generate this from a configuration function for later use.
+export const config = {
+	strings: instruments.guitar_EADGBE.slice(),
 	sharps: true,
 	flats: true,
 	activeNotes: pitchClass.slice()
@@ -26,7 +58,7 @@ export const config = {
 /**
  * Generate octaves down to A0 (we start at octave 4 by default, hence the negative numbers).
  */
-export const lookup = [-4, -3, -2, -1, 0]
+export const lookup = [-4, -3, -2, -1, 0, 1, 2, 3]
 	.map(generateLookup)
 	.reduce((p, c) => p.concat(c));
 
