@@ -8,6 +8,12 @@ import { NoteViewModel } from './notes/model';
 import '@fortawesome/fontawesome-free/css/all.css';
 import { createStringRanges, config } from './config';
 
+const flags = {
+	notesConfig: false,
+	fretboardConfig: true,
+	settingsConfig: false
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 	const configContainer = document.createElement('div');
 	const notesContainer = document.createElement('div');
@@ -44,9 +50,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const template = (fretboardContainer, notesContainer, configContainer) => html`
 	${fretboardContainer}
-	<div class="tabs is-fullwidth">
+	<div hidden class="tabs is-fullwidth">
 		<ul>
-			<li class="is-active">
+			<li ?hidden="${!flags.notesConfig}" class="is-active">
 				<a>
 					<span class="icon is-small">
 						<i class="fas fa-music"></i>
@@ -54,7 +60,7 @@ const template = (fretboardContainer, notesContainer, configContainer) => html`
 					Notes/scale
 				</a>
 			</li>
-			<li class="is-active">
+			<li ?hidden="${!flags.fretboardConfig}" class="is-active">
 				<a>
 					<span class="icon is-small">
 						<i class="fas fa-cog"></i>
@@ -62,7 +68,7 @@ const template = (fretboardContainer, notesContainer, configContainer) => html`
 					Fretboard Configuration
 				</a>
 			</li>
-			<li class="is-active">
+			<li ?hidden="${!flags.settingsConfig}" class="is-active">
 				<a>
 					<span class="icon is-small">
 						<i class="fas fa-cog"></i>
@@ -72,6 +78,6 @@ const template = (fretboardContainer, notesContainer, configContainer) => html`
 			</li>
 		</ul>
 	</div>
-	${notesContainer}
-	${configContainer}
+	${flags.notesConfig ? notesContainer : ''}
+	${flags.fretboardConfig ? configContainer : ''}
 `;

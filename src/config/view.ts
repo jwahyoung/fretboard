@@ -5,7 +5,8 @@ import { pitchClass } from "../constants";
 
 export const configViewTemplate = ({
 	remove,
-	update
+	update,
+	add
 }: ConfigViewModel) => html`
 	<section class="section" id="config">
 		<div class="container">
@@ -31,7 +32,7 @@ export const configViewTemplate = ({
 							<input id="octave-${index}" class="input is-small" type="number" .value=${x.octave}  @change=${(e) => { x.octave = parseInt(e.target.value, 10); update(); }} />
 						</div>
 						<div class="column">
-							<label for="frets-${index}">Number of Frets</label>
+							<label for="frets-${index}">Number of Positions</label>
 							<input id="frets-${index}" class="input is-small" type="number" min="0" .value=${x.frets} @change=${(e) => { x.frets = parseInt(e.target.value, 10); update(); }} />
 						</div>
 						<div class="column">
@@ -49,6 +50,7 @@ export const configViewTemplate = ({
 		`)}
 		</ol>
 
+		<button type="button" class="button is-primary is-fullwidth" @click=${() => add()}>Add String</button>
 		</div>
 	</section>
 `;

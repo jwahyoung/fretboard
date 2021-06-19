@@ -14,7 +14,7 @@ export class NoteViewModel {
 	remove = (index) => {
 		config.strings.splice(index, 1);
 		this.render();
-		this.update(); // stupid hack for now.
+		this.update(); // stupid hack for now.	
 	}
 
 	render() {
