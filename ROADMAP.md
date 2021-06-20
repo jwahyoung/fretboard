@@ -1,8 +1,8 @@
 # Fretboard roadmap
 
-DONE - Offset functionality.
+- DONE - Offset functionality.
 	- table padding
-- Left-handed display.
+- DONE - Left-handed display.
 - Audio hookup.
 	- Base tuning per string (440hz relative?)
 - Ability to add strings
