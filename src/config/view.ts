@@ -13,7 +13,7 @@ export const configViewTemplate = ({
 	<section class="section" id="config">
 		<div class="container">
 			<div class="field">
-				<label class="label" for="tuning">Tuning</label>
+				<label class="label" for="tuning">Instrument</label>
 				<div class="control">
 					<div class="select">
 						<select @change=${event => changeTuning(event)} class="input">
@@ -25,7 +25,7 @@ export const configViewTemplate = ({
 					</div>
 				</div>
 
-				<button class="button is-primary" type="button">Load tuning</button>
+				<button class="button is-primary" type="button">Load instrument</button>
 			</div>
 			<ol reversed="reversed" class="is-unstyled" style="counter-reset: li ${config.strings.length + 1}">
 			${config.strings.map((x, index) => html`
@@ -70,7 +70,7 @@ export const configViewTemplate = ({
 			<button type="button" class="button is-primary is-fullwidth" @click=${() => add()}>Add String</button>
 
 			<div>
-				<button type="button">Save tuning</button>
+				<button type="button">Save instrument</button>
 			</div>
 		</div>
 	</section>
