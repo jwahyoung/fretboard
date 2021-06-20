@@ -17,7 +17,9 @@ export class ConfigViewModel {
 	}
 
 	changeTuning = (event: Event) => {
-		config.strings = instruments[event.target.value].strings;
+		config.strings = instruments[event.target.value].strings.map(x => {
+			return Object.assign({}, x);
+		});
 
 		this.render();
 		this.update(); // stupid hack for now.

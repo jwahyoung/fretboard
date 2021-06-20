@@ -67,7 +67,9 @@ export const instruments = {
 
 // TODO: Generate this from a configuration function for later use.
 export const config = {
-	strings: instruments.guitar_EADGBE.strings.slice(),
+	strings: instruments.guitar_EADGBE.strings.map(x => {
+		return Object.assign({}, x);
+	}),
 	sharps: true,
 	flats: true,
 	activeNotes: pitchClass.slice()
