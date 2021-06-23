@@ -8,25 +8,31 @@ export const configViewTemplate = ({
 	update,
 	add,
 	tunings,
+	currentTuning,
+	setTuning,
 	changeTuning
 }: ConfigViewModel) => html`
 	<section class="section" id="config">
 		<div class="container">
-			<div class="field">
-				<label class="label" for="tuning">Instrument</label>
-				<div class="control">
-					<div class="select">
-						<select @change=${event => changeTuning(event)} class="input">
-							<option>Select a tuning option...</option>
-							${tunings.map(x => html`
-								<option .value=${x.id}>${x.name}</option> 
-							`)}
-						</select>
+			<form class="box" @submit=${event => changeTuning(event)}>
+				<div class="field is-grouped">
+					<label class="sr-only" for="tuning">Instrument</label>
+					<div class="control is-expanded">
+						<div class="select is-fullwidth">
+							<select .value=${currentTuning} @change=${event => setTuning(event)} class="input">
+								<option value="" disabled hidden ?selected=${!currentTuning}>Select a tuning option...</option>
+								${tunings.map(x => html`
+									<option ?selected=${currentTuning === x.id} .value=${x.id}>${x.name}</option> 
+								`)}
+							</select>
+						</div>
+					</div>
+					<div class="control">
+						<button class="button is-primary" type="submit">Load instrument</button>
 					</div>
 				</div>
+			</form>
 
-				<button class="button is-primary" type="button">Load instrument</button>
-			</div>
 			<ol reversed="reversed" class="is-unstyled" style="counter-reset: li ${config.strings.length + 1}">
 			${config.strings.map((x, index) => html`
 				<li class="is-relative">
@@ -68,10 +74,6 @@ export const configViewTemplate = ({
 			</ol>
 
 			<button type="button" class="button is-primary is-fullwidth" @click=${() => add()}>Add String</button>
-
-			<div>
-				<button type="button">Save instrument</button>
-			</div>
 		</div>
 	</section>
 `;

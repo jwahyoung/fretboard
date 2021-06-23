@@ -6,6 +6,7 @@ export class ConfigViewModel {
 	_viewTemplate: View<ConfigViewModel>;
 	_targetSelector: () => HTMLElement;
 	tunings: any;
+	currentTuning: string;
 
 	constructor({ viewTemplate, targetSelector }) {
 		this._viewTemplate = viewTemplate;
@@ -16,10 +17,22 @@ export class ConfigViewModel {
 		});
 	}
 
+	setTuning = (event: Event) => {
+		this.currentTuning = event.target.value;
+	}
+
 	changeTuning = (event: Event) => {
-		config.strings = instruments[event.target.value].strings.map(x => {
+		event.preventDefault();
+	
+		if (!this.currentTuning) {
+			return;
+		}
+
+		config.strings = instruments[this.currentTuning].strings.map(x => {
 			return Object.assign({}, x);
 		});
+
+		this.currentTuning = undefined;
 
 		this.render();
 		this.update(); // stupid hack for now.
