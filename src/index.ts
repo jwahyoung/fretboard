@@ -4,12 +4,13 @@ import { configViewTemplate } from './config/view';
 import { ConfigViewModel } from './config/model';
 import { noteViewTemplate } from './notes/view';
 import { NoteViewModel } from './notes/model';
+import './model/fretmodel';
 
 import '@fortawesome/fontawesome-free/css/all.css';
 import { createStringRanges, config } from './config';
 
 const flags = {
-	notesConfig: false,
+	notesConfig: true,
 	fretboardConfig: true,
 	settingsConfig: false
 };
@@ -50,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 const template = (fretboardContainer, notesContainer, configContainer) => html`
 	${fretboardContainer}
-	<div hidden class="tabs is-fullwidth">
+	<div class="tabs is-fullwidth">
 		<ul>
 			<li ?hidden="${!flags.notesConfig}" class="is-active">
 				<a>

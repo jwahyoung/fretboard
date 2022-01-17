@@ -67,7 +67,7 @@ export const instruments = {
 
 // TODO: Generate this from a configuration function for later use.
 export const config = {
-	strings: instruments.guitar_EADGBE.strings.map(x => {
+	strings: instruments.bass_BEADGC.strings.map(x => {
 		return Object.assign({}, x);
 	}),
 	sharps: true,

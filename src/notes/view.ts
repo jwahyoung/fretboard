@@ -4,8 +4,8 @@ import { pitchClass, octaveNotes } from "../constants";
 import { NoteViewModel } from "./model";
 
 export const noteViewTemplate = ({
-	remove,
-	update
+	update,
+	notes
 }: NoteViewModel) => html`
 	<section class="section" id="notes">
 		<div class="container">
@@ -19,10 +19,10 @@ export const noteViewTemplate = ({
 				</div>
 				<div class="column">
 					<div class="chromaticcircle">
-						${octaveNotes.map((x, i) => html`
+						${notes.map((x, i) => html`
 							<label class="button b${i + 1} ${x.indexOf(',') > -1 ? 'button-blackkey' : 'button-whitekey'}">
 								<span>${x.replace(',', '/')}</span>
-								<input type="checkbox" class="is-sr-only" .value=${x} />
+								<input type="checkbox" class="is-sr-only" .value=${x} @click=${update}/>
 							</label>
 						`)}
 					</div>
